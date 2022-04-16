@@ -1,0 +1,213 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<html>      
+        <body id="page-top">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+                <div class="container">
+                    <a class="navbar-brand" href="#page-top">Dennis Mwangi</a>
+                    <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        Menu
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">My Projects</a></li>
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">My Skills</a></li>
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact Me</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Masthead-->
+            <header class="masthead bg-primary text-white text-center">
+                <div class="container d-flex align-items-center flex-column">
+                    <!-- Masthead Avatar Image-->
+                    <img class="masthead-avatar mb-5" src="{% static 'gallary/dennis.jpeg' %}" alt="..." />
+                    <!-- Masthead Heading-->
+                    <h1 class="masthead-heading text-uppercase mb-0">Dennis Mwangi</h1>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom divider-light">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+                    <!-- Masthead Subheading-->
+                    <p class="masthead-subheading font-weight-light mb-0">Software Engineer</p>
+                </div>
+            </header>
+            <!-- Portfolio Section-->
+            <section class="page-section portfolio" id="portfolio">
+                <div class="container">
+                    <!-- Portfolio Section Heading-->
+                    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">My Hosted Projects</h2>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+                    <!-- Portfolio Grid Items-->
+                    <div class="row justify-content-center">
+                        {% for portfolio in portfolios %}
+                        <!-- Portfolio Item 1-->
+                        <div class="col-md-6 col-lg-4 mb-5">
+                            <div class="portfolio-item">
+
+                                    <div class="portfolio-item-caption-content text-center text-white"></div>
+                           <div class="portlink">    
+                                <a href="{{ portfolio.link }}" target="/"><img class="img-fluid" src="{{ portfolio.image.url }}" alt="..." /></a>
+                            </div>
+                            </div>
+                            <div>{{ portfolio.title }}</div>
+                           
+                            
+
+                        </div>
+                        <style>
+                            img-fluid:hover{
+                                background-color: red;
+                            }
+                        </style>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <!-- About Section-->
+            <section class="page-section bg-primary text-white mb-0" id="about">
+                <div class="container">
+                    <!-- About Section Heading-->
+                    <h2 class="page-section-heading text-center text-uppercase text-white">My Skills</h2>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom divider-light">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+                    <!-- About Section Content-->
+                    <div class="row">
+                        <div class="col-lg-4 me-auto">
+                            <p class="lead">
+                                <h5> <u> Dev Operations</u></h5>
+                                Development operations are some of the skills every Software Engineer should have in order to be successful. In the past, I have been working with DevOps, but not that much exposed to it till i joined masomo.tech company where i had to do all tasks of DevOps making me learn alot of things while in that process. CI/CD is one of the things i have learnt while working with DevOps. And also i have learnt how to use Docker and Kubernetes to deploy and manage my projects. Before then i new nothing about Docker till i joined masomo.tech company. Also i learnt alot of things about hosting and deployment and management of my projects. Working with some of the best deployment sites and companies like AWS for hosting and S3 for storing big files and also other hosting sites like HEROKU etc. Github is the best for all programmers and i have learnt alot of things with it like pull requests how to make comments in every branch i wanna push and also how to make a fork and how to merge pull requests. Also i have learnt how to use gitlab and bitbucket to manage my projects.
+                            </p>
+                        </div>
+                        <div class="col-lg-4 me-auto">
+                            <p class="lead">
+                                <h5> <u> Fronted</u></h5>
+                                 In my beginning of my career i have been working with frontend development. I have learnt alot of things about HTML, CSS, Javascript, Bootstrap, JQuery, Vue, MySQL, Firebase, etc. Learnt alot of staffs before switching to backend development. Things like fornted frameworks eg vue js made my career enjoying making my work easier and also making me learn alot of things in this world of programming. Also working with Sketch  to design my projects made me have a vast knowledge about fronted. Also i have learnt alot of things about SEO and how to make my website more search engine friendly.
+                            </p>
+                        </div>
+                        <div class="col-lg-4 me-auto">
+                            <p class="lead">
+                                <h5> <u> Backend</u></h5>
+                                Backend is my strong hold for me coz i have spent almsot whole of my time doing it. I have learnt alot of things about Python, Django, etc. I have learnt alot of things about database management and also how to use it in my projects.Mysql and Postgress Database are popular database that i strongly use in my daily career tasks. Django framework found it amaizing working with it for it is user friendly and easy to learn. Apart from python programming language ive also learnt other programming language like C, C++ and JAVA but python is what i use in my daily tasks i have a vast knowledge in it other languages is just a small knowledge about them. I learnt alot on how to use git and github to manage my projects. Also i have learnt how to use gitlab and bitbucket to manage my projects.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- About Section Button-->
+                   
+                </div>
+            </section>
+            <!-- Contact Section-->
+            <section class="page-section" id="contact">
+                <div class="container">
+                    <!-- Contact Section Heading-->
+                    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+                    <!-- Contact Section Form-->
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-xl-7">
+                    
+                            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                <!-- Name input-->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                    <label for="name">Full name</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                </div>
+                                <!-- Email address input-->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                    <label for="email">Email address</label>
+                                    <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                </div>
+                                <!-- Phone number input-->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                    <label for="phone">Phone number</label>
+                                    <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                                </div>
+                                <!-- Message input-->
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                    <label for="message">Message</label>
+                                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                                </div>
+                                <!-- Submit success message-->
+                                <!---->
+                                <!-- This is what your users will see when the form-->
+                                <!-- has successfully submitted-->
+                                <div class="d-none" id="submitSuccessMessage">
+                                    <div class="text-center mb-3">
+                                        <div class="fw-bolder">Form submission successful!</div> 
+                                    </div>
+                                </div>
+                                <!-- Submit error message-->
+                                <!---->
+                                <!-- This is what your users will see when there is-->
+                                <!-- an error submitting the form-->
+                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                <!-- Submit Button-->
+                                <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Footer-->
+            <footer class="footer text-center">
+                <div class="container">
+                    <div class="row">
+                        <!-- Footer Location-->
+                        <div class="col-lg-4 mb-5 mb-lg-0">
+                            <h4 class="text-uppercase mb-4">Location</h4>
+                            <p class="lead mb-0">
+                                242 Kenol, 
+                                <br />
+                                Murang'a central
+                                <br> Kenya
+                            </p>
+                        </div>
+                        <!-- Footer Social Icons-->
+                        <div class="col-lg-4 mb-5 mb-lg-0">
+                            <h4 class="text-uppercase mb-4">Get in touch with me</h4>
+                            <a class="btn btn-outline-light btn-social mx-1" href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="/"><i class="fab fa-fw fa-google"></i></a>
+                            <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/ProgrammerDmk" target="/"><i class="fab fa-fw fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/dennis-mwangik/" target="/"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/Dennismwangi-k" target="/"><i class="fab fa-fw fa-github"></i></a>
+                        </div>
+                        <!-- Footer About Text-->
+                        <div class="col-lg-4">
+                            <h4 class="text-uppercase mb-4">About Me </h4>
+                            <p class="lead mb-0">
+                                Iam a student of Computer Science and Engineering at the Chuka University.I am a self-motivated person who is always willing to learn new things.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            
+          
+        </body>
+    </html>
+    
+</html>
+{% endblock %}
